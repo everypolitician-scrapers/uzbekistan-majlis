@@ -86,8 +86,8 @@ def scrape_person(url, lang, data_i)
   }.merge(data_i).merge(info_data).merge(add_data)
   data[:image] = URI.join(url, URI.encode(data[:image])).to_s unless data[:image].to_s.empty?
   data[:birth_date] = data[:birth_date].split('.').reverse.join('-')
-  puts data[:id]
-  # ScraperWiki.save_sqlite([:id, :term], data)
+  # puts data[:id]
+  ScraperWiki.save_sqlite([:id, :term], data)
 end
 
 @LANG = ARGV.first || 'uz'
