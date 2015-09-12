@@ -46,7 +46,7 @@ def scrape_person(url, data_i)
   data = { 
     id: url.to_s.split('/').last,
     name: noko.css('h2 span').text.tidy,
-    birth_date: info.xpath('.//td[text()="Date of Birth"]/following-sibling::td').text,
+    birth_date: info.xpath('.//td[text()="Date of Birth"]/following-sibling::td').text.split('.').reverse.join('-'),
     birth_place: info.xpath('.//td[text()="Place of Birth"]/following-sibling::td').text,
     nationality: info.xpath('.//td[text()="Nationality"]/following-sibling::td').text,
 
