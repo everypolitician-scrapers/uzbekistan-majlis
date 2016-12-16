@@ -3,9 +3,9 @@
 
 require 'scraperwiki'
 require 'nokogiri'
-require 'colorize'
 require 'pry'
 require 'set'
+
 require 'open-uri/cached'
 OpenURI::Cache.cache_path = '.cache'
 
